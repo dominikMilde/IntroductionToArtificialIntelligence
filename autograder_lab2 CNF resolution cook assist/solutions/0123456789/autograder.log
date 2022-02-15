@@ -1,0 +1,731 @@
+0036514603 (1)
+================
+
+=== UNARCHIVE AND STRUCTURE ===
+OK!
+
+=== COMPILE ===
+Skipping (python)
+
+=== EVALUATION ===
+
+=== TOTAL RESULTS ===
+25 / 25 tests passed. (100.0%)
+
+== RESOLUTION ==
+  Passed 20 / 20 tests.
+
+- Passed test: resolution resolution_small_example.txt
+-> Complete obtained output:
+Pocetne premise:
+b v ~a
+~b v c
+a
+~c
+============================
+~b je dobiven rezolucijom:  (~c) i (~b v c)
+~a je dobiven rezolucijom:  (b v ~a) i (~b)
+NIL je dobiven rezolucijom:  (a) i (~a)
+============================
+[CONCLUSION]: c is true
+
+- Passed test: resolution resolution_ai.txt
+-> Complete obtained output:
+Pocetne premise:
+prolaz_rok v ~prolaz_labosi v ~ispitni_rok2
+ispitni_rok1
+~ispitni_rok1 v prolaz_kontinuirano v ~prolaz_labosi v prolaz_rok
+lab1
+~lab4 v prolaz_labosi
+zi_pismeni
+~lab2 v prolaz_labosi
+~lab1 v prolaz_labosi
+~prolaz_kontinuirano v prolaz_predmeta
+~prolaz_rok v prolaz_predmeta
+prolaz_kontinuirano v ~mi_prolaz v ~prolaz_labosi v ~zi_prolaz
+prolaz_labosi v ~lab3
+mi_teorija
+~mi_pismeni
+~zi_teorija
+~prolaz_predmeta
+============================
+~prolaz_kontinuirano je dobiven rezolucijom:  (~prolaz_kontinuirano v prolaz_predmeta) i (~prolaz_predmeta)
+~ispitni_rok1 v ~prolaz_labosi v prolaz_rok je dobiven rezolucijom:  (~ispitni_rok1 v prolaz_kontinuirano v ~prolaz_labosi v prolaz_rok) i (~prolaz_kontinuirano)
+~ispitni_rok1 v ~lab1 v prolaz_rok je dobiven rezolucijom:  (~lab1 v prolaz_labosi) i (~ispitni_rok1 v ~prolaz_labosi v prolaz_rok)
+~ispitni_rok1 v prolaz_rok je dobiven rezolucijom:  (lab1) i (~ispitni_rok1 v ~lab1 v prolaz_rok)
+~prolaz_rok je dobiven rezolucijom:  (~prolaz_rok v prolaz_predmeta) i (~prolaz_predmeta)
+~ispitni_rok1 je dobiven rezolucijom:  (~ispitni_rok1 v prolaz_rok) i (~prolaz_rok)
+NIL je dobiven rezolucijom:  (ispitni_rok1) i (~ispitni_rok1)
+============================
+[CONCLUSION]: prolaz_predmeta is true
+
+- Passed test: resolution resolution_chicken_alfredo_nomilk.txt
+-> Complete obtained output:
+[CONCLUSION]: chicken_alfredo is unknown
+
+- Passed test: resolution resolution_chicken_alfredo.txt
+-> Complete obtained output:
+Pocetne premise:
+flour
+~parmesan v ~flour v ~butter v ~milk v ~cream v alfredo_sauce
+pasta
+milk
+chicken
+cream
+parmesan
+chicken_alfredo v ~alfredo_sauce v ~olive_oil v ~chicken v ~pasta
+butter
+olive_oil
+~chicken_alfredo
+============================
+~olive_oil v ~pasta v ~chicken v ~alfredo_sauce je dobiven rezolucijom:  (chicken_alfredo v ~alfredo_sauce v ~olive_oil v ~chicken v ~pasta) i (~chicken_alfredo)
+~pasta v ~chicken v ~alfredo_sauce je dobiven rezolucijom:  (olive_oil) i (~olive_oil v ~pasta v ~chicken v ~alfredo_sauce)
+~pasta v ~parmesan v ~butter v ~flour v ~milk v ~cream v ~chicken je dobiven rezolucijom:  (~pasta v ~chicken v ~alfredo_sauce) i (~parmesan v ~flour v ~butter v ~milk v ~cream v alfredo_sauce)
+~pasta v ~flour v ~butter v ~milk v ~cream v ~chicken je dobiven rezolucijom:  (~pasta v ~parmesan v ~butter v ~flour v ~milk v ~cream v ~chicken) i (parmesan)
+~pasta v ~butter v ~flour v ~milk v ~cream je dobiven rezolucijom:  (chicken) i (~pasta v ~flour v ~butter v ~milk v ~cream v ~chicken)
+~pasta v ~flour v ~butter v ~milk je dobiven rezolucijom:  (cream) i (~pasta v ~butter v ~flour v ~milk v ~cream)
+~pasta v ~butter v ~milk je dobiven rezolucijom:  (flour) i (~pasta v ~flour v ~butter v ~milk)
+~pasta v ~milk je dobiven rezolucijom:  (~pasta v ~butter v ~milk) i (butter)
+~milk je dobiven rezolucijom:  (~pasta v ~milk) i (pasta)
+NIL je dobiven rezolucijom:  (~milk) i (milk)
+============================
+[CONCLUSION]: chicken_alfredo is true
+
+- Passed test: resolution resolution_chicken_broccoli_alfredo_big.txt
+-> Complete obtained output:
+Pocetne premise:
+parmesan
+flour
+pasta
+~chicken v diced_chicken v ~olive_oil
+butter
+milk
+parsley
+chicken
+~broccoli v ~diced_chicken v chicken_broccoli_alfredo v ~pasta v ~alfredo_sauce
+cream
+~butter v ~milk v ~parmesan v alfredo_sauce v ~flour v ~cream
+olive_oil
+broccoli
+~chicken_broccoli_alfredo
+============================
+~pasta v ~broccoli v ~diced_chicken v ~alfredo_sauce je dobiven rezolucijom:  (~chicken_broccoli_alfredo) i (~broccoli v ~diced_chicken v chicken_broccoli_alfredo v ~pasta v ~alfredo_sauce)
+~broccoli v ~chicken v ~pasta v ~olive_oil v ~alfredo_sauce je dobiven rezolucijom:  (~chicken v diced_chicken v ~olive_oil) i (~pasta v ~broccoli v ~diced_chicken v ~alfredo_sauce)
+~butter v ~broccoli v ~milk v ~chicken v ~pasta v ~olive_oil v ~parmesan v ~flour v ~cream je dobiven rezolucijom:  (~broccoli v ~chicken v ~pasta v ~olive_oil v ~alfredo_sauce) i (~butter v ~milk v ~parmesan v alfredo_sauce v ~flour v ~cream)
+~butter v ~broccoli v ~milk v ~cream v ~chicken v ~pasta v ~olive_oil v ~parmesan je dobiven rezolucijom:  (flour) i (~butter v ~broccoli v ~milk v ~chicken v ~pasta v ~olive_oil v ~parmesan v ~flour v ~cream)
+~butter v ~broccoli v ~milk v ~cream v ~pasta v ~olive_oil v ~parmesan je dobiven rezolucijom:  (~butter v ~broccoli v ~milk v ~cream v ~chicken v ~pasta v ~olive_oil v ~parmesan) i (chicken)
+~broccoli v ~milk v ~cream v ~pasta v ~olive_oil v ~parmesan je dobiven rezolucijom:  (~butter v ~broccoli v ~milk v ~cream v ~pasta v ~olive_oil v ~parmesan) i (butter)
+~broccoli v ~milk v ~pasta v ~olive_oil v ~cream je dobiven rezolucijom:  (parmesan) i (~broccoli v ~milk v ~cream v ~pasta v ~olive_oil v ~parmesan)
+~broccoli v ~pasta v ~olive_oil v ~cream je dobiven rezolucijom:  (milk) i (~broccoli v ~milk v ~pasta v ~olive_oil v ~cream)
+~broccoli v ~olive_oil v ~cream je dobiven rezolucijom:  (pasta) i (~broccoli v ~pasta v ~olive_oil v ~cream)
+~broccoli v ~cream je dobiven rezolucijom:  (olive_oil) i (~broccoli v ~olive_oil v ~cream)
+~broccoli je dobiven rezolucijom:  (cream) i (~broccoli v ~cream)
+NIL je dobiven rezolucijom:  (broccoli) i (~broccoli)
+============================
+[CONCLUSION]: chicken_broccoli_alfredo is true
+
+- Passed test: resolution resolution_coffee.txt
+-> Complete obtained output:
+Pocetne premise:
+heater
+water
+~hot_water v coffee v ~coffee_powder
+~water v hot_water v ~heater
+coffee_powder
+~coffee
+============================
+~hot_water v ~coffee_powder je dobiven rezolucijom:  (~hot_water v coffee v ~coffee_powder) i (~coffee)
+~water v ~heater v ~coffee_powder je dobiven rezolucijom:  (~hot_water v ~coffee_powder) i (~water v hot_water v ~heater)
+~heater v ~coffee_powder je dobiven rezolucijom:  (water) i (~water v ~heater v ~coffee_powder)
+~coffee_powder je dobiven rezolucijom:  (heater) i (~heater v ~coffee_powder)
+NIL je dobiven rezolucijom:  (coffee_powder) i (~coffee_powder)
+============================
+[CONCLUSION]: coffee is true
+
+- Passed test: resolution resolution_coffee_noheater.txt
+-> Complete obtained output:
+[CONCLUSION]: coffee is unknown
+
+- Passed test: resolution resolution_coffee_or_tea.txt
+-> Complete obtained output:
+Pocetne premise:
+tea_bag
+~coffee_powder v coffee v ~hot_water
+heater
+water
+~water v hot_water v ~heater
+coffee_powder
+~coffee
+~tea
+============================
+~coffee_powder v ~hot_water je dobiven rezolucijom:  (~coffee_powder v coffee v ~hot_water) i (~coffee)
+~coffee_powder v ~water v ~heater je dobiven rezolucijom:  (~water v hot_water v ~heater) i (~coffee_powder v ~hot_water)
+~coffee_powder v ~water je dobiven rezolucijom:  (~coffee_powder v ~water v ~heater) i (heater)
+~coffee_powder je dobiven rezolucijom:  (water) i (~coffee_powder v ~water)
+NIL je dobiven rezolucijom:  (coffee_powder) i (~coffee_powder)
+============================
+[CONCLUSION]: coffee v tea is true
+
+- Passed test: resolution resolution_coffee_or_tea_nopowder.txt
+-> Complete obtained output:
+Pocetne premise:
+tea_bag
+coffee v ~hot_water v ~coffee_powder
+heater
+~heater v hot_water v ~water
+water
+tea v ~tea_bag v ~hot_water
+~tea
+~coffee
+============================
+~tea_bag v ~hot_water je dobiven rezolucijom:  (~tea) i (tea v ~tea_bag v ~hot_water)
+~heater v ~tea_bag v ~water je dobiven rezolucijom:  (~heater v hot_water v ~water) i (~tea_bag v ~hot_water)
+~heater v ~water je dobiven rezolucijom:  (tea_bag) i (~heater v ~tea_bag v ~water)
+~water je dobiven rezolucijom:  (~heater v ~water) i (heater)
+NIL je dobiven rezolucijom:  (water) i (~water)
+============================
+[CONCLUSION]: coffee v tea is true
+
+- Passed test: resolution resolution_small_example_2.txt
+-> Complete obtained output:
+Pocetne premise:
+~b v ~a v c
+b
+a
+~c
+============================
+~b v ~a je dobiven rezolucijom:  (~b v ~a v c) i (~c)
+~a je dobiven rezolucijom:  (b) i (~b v ~a)
+NIL je dobiven rezolucijom:  (a) i (~a)
+============================
+[CONCLUSION]: c is true
+
+- Passed test: resolution resolution_small_example_3.txt
+-> Complete obtained output:
+[CONCLUSION]: c is unknown
+
+- Passed test: resolution resolution_small_example_4.txt
+-> Complete obtained output:
+Pocetne premise:
+~a v b
+a
+c v ~b
+~c
+============================
+~b je dobiven rezolucijom:  (~c) i (c v ~b)
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: c v b is true
+
+- Passed test: resolution resolution_heldout_small.txt
+-> Complete obtained output:
+Pocetne premise:
+a
+~a
+============================
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: a is true
+
+- Passed test: resolution resolution_heldout_small_2.txt
+-> Complete obtained output:
+[CONCLUSION]: b v c is unknown
+
+- Passed test: resolution resolution_heldout_tautology.txt
+-> Complete obtained output:
+[CONCLUSION]: c is unknown
+
+- Passed test: resolution resolution_heldout_tautology_2.txt
+-> Complete obtained output:
+Pocetne premise:
+~a v c v ~d
+d
+a
+b v ~a
+~c
+============================
+~a v ~d je dobiven rezolucijom:  (~a v c v ~d) i (~c)
+~d je dobiven rezolucijom:  (a) i (~a v ~d)
+NIL je dobiven rezolucijom:  (d) i (~d)
+============================
+[CONCLUSION]: c is true
+
+- Passed test: resolution resolution_heldout_tautology_3.txt
+-> Complete obtained output:
+[CONCLUSION]: a is unknown
+
+- Passed test: resolution resolution_heldout_tautology_4.txt
+-> Complete obtained output:
+[CONCLUSION]: a v b is unknown
+
+- Passed test: resolution resolution_heldout_large_chain.txt
+-> Complete obtained output:
+Pocetne premise:
+e v ~d
+d v ~c
+~b v c
+f v ~e
+b v ~a
+~f v g
+a
+~g
+============================
+~f je dobiven rezolucijom:  (~g) i (~f v g)
+~e je dobiven rezolucijom:  (~f) i (f v ~e)
+~d je dobiven rezolucijom:  (~e) i (e v ~d)
+~c je dobiven rezolucijom:  (d v ~c) i (~d)
+~b je dobiven rezolucijom:  (~b v c) i (~c)
+~a je dobiven rezolucijom:  (~b) i (b v ~a)
+NIL je dobiven rezolucijom:  (a) i (~a)
+============================
+[CONCLUSION]: g is true
+
+- Passed test: resolution resolution_heldout_goal_isnegated.txt
+-> Complete obtained output:
+Pocetne premise:
+a
+b v ~a
+~c v ~b
+c
+============================
+~b je dobiven rezolucijom:  (c) i (~c v ~b)
+~a je dobiven rezolucijom:  (b v ~a) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: ~c is true
+
+== COOKING ==
+  Passed 5 / 5 tests.
+
+- Passed test: cooking cooking_coffee.txt cooking_coffee_input.txt
+-> Complete obtained output:
+User input: water ?
+Pocetne premise:
+water
+coffee_powder
+hot_water v ~water v ~heater
+heater
+coffee v ~hot_water v ~coffee_powder
+~water
+============================
+NIL je dobiven rezolucijom:  (water) i (~water)
+============================
+[CONCLUSION]: water is true
+User input: hot_water ?
+Pocetne premise:
+water
+coffee_powder
+hot_water v ~water v ~heater
+heater
+coffee v ~hot_water v ~coffee_powder
+~hot_water
+============================
+~water v ~heater je dobiven rezolucijom:  (~hot_water) i (hot_water v ~water v ~heater)
+~heater je dobiven rezolucijom:  (~water v ~heater) i (water)
+NIL je dobiven rezolucijom:  (heater) i (~heater)
+============================
+[CONCLUSION]: hot_water is true
+User input: coffee ?
+Pocetne premise:
+water
+coffee_powder
+hot_water v ~water v ~heater
+heater
+coffee v ~hot_water v ~coffee_powder
+~coffee
+============================
+~coffee_powder v ~hot_water je dobiven rezolucijom:  (~coffee) i (coffee v ~hot_water v ~coffee_powder)
+~water v ~heater v ~coffee_powder je dobiven rezolucijom:  (hot_water v ~water v ~heater) i (~coffee_powder v ~hot_water)
+~water v ~coffee_powder je dobiven rezolucijom:  (heater) i (~water v ~heater v ~coffee_powder)
+~coffee_powder je dobiven rezolucijom:  (water) i (~water v ~coffee_powder)
+NIL je dobiven rezolucijom:  (coffee_powder) i (~coffee_powder)
+============================
+[CONCLUSION]: coffee is true
+User input: hot_water ?
+[CONCLUSION]: hot_water is unknown
+User input: coffee ?
+[CONCLUSION]: coffee is unknown
+User input: coffee ?
+Pocetne premise:
+water
+coffee_powder
+hot_water v ~water v ~heater
+heater
+coffee v ~hot_water v ~coffee_powder
+~coffee
+============================
+~coffee_powder v ~hot_water je dobiven rezolucijom:  (~coffee) i (coffee v ~hot_water v ~coffee_powder)
+~water v ~heater v ~coffee_powder je dobiven rezolucijom:  (hot_water v ~water v ~heater) i (~coffee_powder v ~hot_water)
+~water v ~coffee_powder je dobiven rezolucijom:  (heater) i (~water v ~heater v ~coffee_powder)
+~coffee_powder je dobiven rezolucijom:  (water) i (~water v ~coffee_powder)
+NIL je dobiven rezolucijom:  (coffee_powder) i (~coffee_powder)
+============================
+[CONCLUSION]: coffee is true
+
+- Passed test: cooking cooking_chicken_alfredo.txt cooking_chicken_alfredo_input.txt
+-> Complete obtained output:
+User input: alfredo_sauce ?
+Pocetne premise:
+parmesan
+milk
+pasta
+chicken
+olive_oil
+flour
+cream
+~olive_oil v chicken_alfredo v ~chicken v ~alfredo_sauce v ~pasta
+alfredo_sauce v ~parmesan v ~butter v ~cream v ~milk v ~flour
+butter
+~alfredo_sauce
+============================
+~milk v ~parmesan v ~flour v ~butter v ~cream je dobiven rezolucijom:  (alfredo_sauce v ~parmesan v ~butter v ~cream v ~milk v ~flour) i (~alfredo_sauce)
+~milk v ~parmesan v ~butter v ~cream je dobiven rezolucijom:  (flour) i (~milk v ~parmesan v ~flour v ~butter v ~cream)
+~milk v ~parmesan v ~butter je dobiven rezolucijom:  (cream) i (~milk v ~parmesan v ~butter v ~cream)
+~milk v ~butter je dobiven rezolucijom:  (parmesan) i (~milk v ~parmesan v ~butter)
+~butter je dobiven rezolucijom:  (milk) i (~milk v ~butter)
+NIL je dobiven rezolucijom:  (butter) i (~butter)
+============================
+[CONCLUSION]: alfredo_sauce is true
+User input: chicken_alfredo ?
+Pocetne premise:
+parmesan
+milk
+pasta
+chicken
+olive_oil
+flour
+cream
+~olive_oil v chicken_alfredo v ~chicken v ~alfredo_sauce v ~pasta
+alfredo_sauce v ~parmesan v ~butter v ~cream v ~milk v ~flour
+butter
+~chicken_alfredo
+============================
+~chicken v ~pasta v ~olive_oil v ~alfredo_sauce je dobiven rezolucijom:  (~chicken_alfredo) i (~olive_oil v chicken_alfredo v ~chicken v ~alfredo_sauce v ~pasta)
+~olive_oil v ~pasta v ~alfredo_sauce je dobiven rezolucijom:  (~chicken v ~pasta v ~olive_oil v ~alfredo_sauce) i (chicken)
+~olive_oil v ~pasta v ~milk v ~parmesan v ~flour v ~butter v ~cream je dobiven rezolucijom:  (alfredo_sauce v ~parmesan v ~butter v ~cream v ~milk v ~flour) i (~olive_oil v ~pasta v ~alfredo_sauce)
+~olive_oil v ~pasta v ~milk v ~parmesan v ~butter v ~cream je dobiven rezolucijom:  (flour) i (~olive_oil v ~pasta v ~milk v ~parmesan v ~flour v ~butter v ~cream)
+~olive_oil v ~milk v ~parmesan v ~butter v ~cream je dobiven rezolucijom:  (~olive_oil v ~pasta v ~milk v ~parmesan v ~butter v ~cream) i (pasta)
+~milk v ~butter v ~olive_oil v ~cream je dobiven rezolucijom:  (~olive_oil v ~milk v ~parmesan v ~butter v ~cream) i (parmesan)
+~milk v ~butter v ~cream je dobiven rezolucijom:  (olive_oil) i (~milk v ~butter v ~olive_oil v ~cream)
+~milk v ~butter je dobiven rezolucijom:  (cream) i (~milk v ~butter v ~cream)
+~milk je dobiven rezolucijom:  (~milk v ~butter) i (butter)
+NIL je dobiven rezolucijom:  (milk) i (~milk)
+============================
+[CONCLUSION]: chicken_alfredo is true
+User input: chicken_alfredo ?
+[CONCLUSION]: chicken_alfredo is unknown
+
+- Passed test: cooking cooking_chicken_alfredo_nomilk.txt cooking_chicken_alfredo_nomilk_input.txt
+-> Complete obtained output:
+User input: alfredo_sauce ?
+[CONCLUSION]: alfredo_sauce is unknown
+User input: alfredo_sauce ?
+Pocetne premise:
+pasta
+chicken
+butter
+olive_oil
+~chicken v ~pasta v ~alfredo_sauce v chicken_alfredo v ~olive_oil
+~butter v ~parmesan v ~milk v ~cream v alfredo_sauce v ~flour
+parmesan
+cream
+flour
+milk
+~alfredo_sauce
+============================
+~butter v ~parmesan v ~milk v ~flour v ~cream je dobiven rezolucijom:  (~alfredo_sauce) i (~butter v ~parmesan v ~milk v ~cream v alfredo_sauce v ~flour)
+~butter v ~flour v ~parmesan v ~cream je dobiven rezolucijom:  (milk) i (~butter v ~parmesan v ~milk v ~flour v ~cream)
+~flour v ~parmesan v ~cream je dobiven rezolucijom:  (butter) i (~butter v ~flour v ~parmesan v ~cream)
+~flour v ~parmesan je dobiven rezolucijom:  (cream) i (~flour v ~parmesan v ~cream)
+~parmesan je dobiven rezolucijom:  (flour) i (~flour v ~parmesan)
+NIL je dobiven rezolucijom:  (parmesan) i (~parmesan)
+============================
+[CONCLUSION]: alfredo_sauce is true
+User input: alfredo_sauce ?
+[CONCLUSION]: alfredo_sauce is unknown
+User input: chicken_alfredo ?
+Pocetne premise:
+pasta
+chicken
+butter
+olive_oil
+~chicken v ~pasta v ~alfredo_sauce v chicken_alfredo v ~olive_oil
+~butter v ~parmesan v ~milk v ~cream v alfredo_sauce v ~flour
+parmesan
+cream
+flour
+milk
+~chicken_alfredo
+============================
+~olive_oil v ~chicken v ~pasta v ~alfredo_sauce je dobiven rezolucijom:  (~chicken_alfredo) i (~chicken v ~pasta v ~alfredo_sauce v chicken_alfredo v ~olive_oil)
+~butter v ~chicken v ~pasta v ~parmesan v ~milk v ~cream v ~flour v ~olive_oil je dobiven rezolucijom:  (~butter v ~parmesan v ~milk v ~cream v alfredo_sauce v ~flour) i (~olive_oil v ~chicken v ~pasta v ~alfredo_sauce)
+~butter v ~chicken v ~pasta v ~parmesan v ~olive_oil v ~milk v ~cream je dobiven rezolucijom:  (~butter v ~chicken v ~pasta v ~parmesan v ~milk v ~cream v ~flour v ~olive_oil) i (flour)
+~butter v ~chicken v ~pasta v ~parmesan v ~milk v ~cream je dobiven rezolucijom:  (olive_oil) i (~butter v ~chicken v ~pasta v ~parmesan v ~olive_oil v ~milk v ~cream)
+~butter v ~chicken v ~pasta v ~milk v ~cream je dobiven rezolucijom:  (parmesan) i (~butter v ~chicken v ~pasta v ~parmesan v ~milk v ~cream)
+~butter v ~chicken v ~pasta v ~milk je dobiven rezolucijom:  (~butter v ~chicken v ~pasta v ~milk v ~cream) i (cream)
+~butter v ~chicken v ~pasta je dobiven rezolucijom:  (milk) i (~butter v ~chicken v ~pasta v ~milk)
+~chicken v ~pasta je dobiven rezolucijom:  (~butter v ~chicken v ~pasta) i (butter)
+~chicken je dobiven rezolucijom:  (pasta) i (~chicken v ~pasta)
+NIL je dobiven rezolucijom:  (~chicken) i (chicken)
+============================
+[CONCLUSION]: chicken_alfredo is true
+
+- Passed test: cooking cooking_chicken_broccoli_alfredo_big.txt cooking_chicken_broccoli_alfredo_big_input.txt
+-> Complete obtained output:
+User input: chicken_broccoli_alfredo ?
+Pocetne premise:
+chicken
+alfredo_sauce v ~butter v ~cream v ~parmesan v ~milk v ~flour
+parsley
+~broccoli v chicken_broccoli_alfredo v ~pasta v ~diced_chicken v ~alfredo_sauce
+cream
+parmesan
+broccoli
+pasta
+milk
+butter
+olive_oil
+diced_chicken v ~olive_oil v ~chicken
+flour
+~chicken_broccoli_alfredo
+============================
+~pasta v ~broccoli v ~diced_chicken v ~alfredo_sauce je dobiven rezolucijom:  (~broccoli v chicken_broccoli_alfredo v ~pasta v ~diced_chicken v ~alfredo_sauce) i (~chicken_broccoli_alfredo)
+~pasta v ~chicken v ~alfredo_sauce v ~broccoli v ~olive_oil je dobiven rezolucijom:  (~pasta v ~broccoli v ~diced_chicken v ~alfredo_sauce) i (diced_chicken v ~olive_oil v ~chicken)
+~broccoli v ~pasta v ~chicken v ~alfredo_sauce je dobiven rezolucijom:  (olive_oil) i (~pasta v ~chicken v ~alfredo_sauce v ~broccoli v ~olive_oil)
+~pasta v ~chicken v ~alfredo_sauce je dobiven rezolucijom:  (~broccoli v ~pasta v ~chicken v ~alfredo_sauce) i (broccoli)
+~milk v ~pasta v ~chicken v ~butter v ~cream v ~flour v ~parmesan je dobiven rezolucijom:  (~pasta v ~chicken v ~alfredo_sauce) i (alfredo_sauce v ~butter v ~cream v ~parmesan v ~milk v ~flour)
+~milk v ~pasta v ~butter v ~cream v ~flour v ~parmesan je dobiven rezolucijom:  (~milk v ~pasta v ~chicken v ~butter v ~cream v ~flour v ~parmesan) i (chicken)
+~milk v ~pasta v ~butter v ~cream v ~parmesan je dobiven rezolucijom:  (flour) i (~milk v ~pasta v ~butter v ~cream v ~flour v ~parmesan)
+~parmesan v ~pasta v ~cream v ~butter je dobiven rezolucijom:  (milk) i (~milk v ~pasta v ~butter v ~cream v ~parmesan)
+~pasta v ~cream v ~butter je dobiven rezolucijom:  (~parmesan v ~pasta v ~cream v ~butter) i (parmesan)
+~pasta v ~cream je dobiven rezolucijom:  (~pasta v ~cream v ~butter) i (butter)
+~cream je dobiven rezolucijom:  (pasta) i (~pasta v ~cream)
+NIL je dobiven rezolucijom:  (~cream) i (cream)
+============================
+[CONCLUSION]: chicken_broccoli_alfredo is true
+
+- Passed test: cooking cooking_heldout_large_chain.txt cooking_heldout_large_chain_input.txt
+-> Complete obtained output:
+User input: b ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~b
+============================
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: b is true
+User input: c ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~c
+============================
+~b je dobiven rezolucijom:  (~c) i (c v ~b)
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: c is true
+User input: d ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~d
+============================
+~c je dobiven rezolucijom:  (d v ~c) i (~d)
+~b je dobiven rezolucijom:  (~c) i (c v ~b)
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: d is true
+User input: e ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~e
+============================
+~d je dobiven rezolucijom:  (e v ~d) i (~e)
+~c je dobiven rezolucijom:  (d v ~c) i (~d)
+~b je dobiven rezolucijom:  (~c) i (c v ~b)
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: e is true
+User input: f ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~f
+============================
+~e je dobiven rezolucijom:  (~e v f) i (~f)
+~d je dobiven rezolucijom:  (e v ~d) i (~e)
+~c je dobiven rezolucijom:  (d v ~c) i (~d)
+~b je dobiven rezolucijom:  (~c) i (c v ~b)
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: f is true
+User input: g ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~g
+============================
+~f je dobiven rezolucijom:  (~f v g) i (~g)
+~e je dobiven rezolucijom:  (~e v f) i (~f)
+~d je dobiven rezolucijom:  (e v ~d) i (~e)
+~c je dobiven rezolucijom:  (d v ~c) i (~d)
+~b je dobiven rezolucijom:  (~c) i (c v ~b)
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: g is true
+User input: b ?
+[CONCLUSION]: b is unknown
+User input: b ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~b
+============================
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: b is true
+User input: c ?
+[CONCLUSION]: c is unknown
+User input: c ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~c
+============================
+~b je dobiven rezolucijom:  (~c) i (c v ~b)
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: c is true
+User input: d ?
+[CONCLUSION]: d is unknown
+User input: d ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~d
+============================
+~c je dobiven rezolucijom:  (d v ~c) i (~d)
+~b je dobiven rezolucijom:  (~c) i (c v ~b)
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: d is true
+User input: e ?
+[CONCLUSION]: e is unknown
+User input: e ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~e
+============================
+~d je dobiven rezolucijom:  (e v ~d) i (~e)
+~c je dobiven rezolucijom:  (d v ~c) i (~d)
+~b je dobiven rezolucijom:  (~c) i (c v ~b)
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: e is true
+User input: f ?
+[CONCLUSION]: f is unknown
+User input: f ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~f
+============================
+~e je dobiven rezolucijom:  (~e v f) i (~f)
+~d je dobiven rezolucijom:  (e v ~d) i (~e)
+~c je dobiven rezolucijom:  (d v ~c) i (~d)
+~b je dobiven rezolucijom:  (~c) i (c v ~b)
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: f is true
+User input: g ?
+[CONCLUSION]: g is unknown
+User input: g ?
+Pocetne premise:
+d v ~c
+~e v f
+~a v b
+c v ~b
+e v ~d
+a
+~f v g
+~g
+============================
+~f je dobiven rezolucijom:  (~f v g) i (~g)
+~e je dobiven rezolucijom:  (~e v f) i (~f)
+~d je dobiven rezolucijom:  (e v ~d) i (~e)
+~c je dobiven rezolucijom:  (d v ~c) i (~d)
+~b je dobiven rezolucijom:  (~c) i (c v ~b)
+~a je dobiven rezolucijom:  (~a v b) i (~b)
+NIL je dobiven rezolucijom:  (~a) i (a)
+============================
+[CONCLUSION]: g is true

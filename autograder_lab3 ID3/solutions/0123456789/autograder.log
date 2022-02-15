@@ -1,0 +1,33 @@
+0036414603
+================
+
+=== UNARCHIVE AND STRUCTURE ===
+OK!
+
+=== COMPILE ===
+Skipping (python)
+
+=== EVALUATION ===
+
+== ID3 ==
+  Passed 15 / 16 tests.
+
+- Failed test: python3 solution.py heldout_unseen_featurevalue_train.csv heldout_unseen_featurevalue_test.csv
+Execution failed with error (process returned non-zero exit code):
+[BRANCHES]: 
+1:one=b no
+1:one=c maybe
+1:one=a yes
+[PREDICTIONS]: Traceback (most recent call last):
+  File "solution.py", line 284, in <module>
+    model.predict(testData)
+  File "solution.py", line 171, in predict
+    predictions.append(self.onePrediction(dictionary, self.tree))
+  File "solution.py", line 207, in onePrediction
+    trimmedTree = tree['nodes'][query[atr]]
+KeyError: 'd'
+
+
+=== TOTAL RESULTS ===
+15 / 16 tests passed. (93.75%)
+
